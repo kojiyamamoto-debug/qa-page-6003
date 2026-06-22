@@ -23,6 +23,9 @@
 <figure><img class="qa" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4="><figcaption>⑧ data: URI（除外されるべき）</figcaption></figure>
 <figure><img class="qa" src="javascript:void(0)"><figcaption>⑨ javascript:（除外されるべき）</figcaption></figure>
 <figure><img class="qa" src=""><figcaption>⑩ 空src（除外されるべき）</figcaption></figure>
+<figure><img class="qa" src="img/same.svg"><figcaption>⑪ 重複（④と同一URL → array_uniqueで1件に集約されるべき）</figcaption></figure>
+<figure><img class="qa" src="../../../../../x.svg"><figcaption>⑫ 階層超え（rootを超える ../ → 先頭で止まる）</figcaption></figure>
+<figure><img class="qa" src="写真/サンプル.svg"><figcaption>⑬ マルチバイトパス 写真/サンプル.svg</figcaption></figure>
 </div>
 </body>
 </html>
