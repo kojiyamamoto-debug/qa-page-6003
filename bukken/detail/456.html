@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>サンプル物件ページ</title>
+</head>
+<body>
+<h1 class="name">テスト物件 渋谷ステーションタワー</h1>
+<p>価格：<span class="price">5,480万円</span></p>
+<p>住所：<span class="address">東京都渋谷区神南1-2-3</span></p>
+
+<h2>物件画像</h2>
+<div id="gallery">
+<figure><img class="qa" src="//placehold.co/160x100/e91e63/ffffff?text=01-CDN"><figcaption>① プロトコル相対（別ドメインCDN）//placehold.co/...</figcaption></figure>
+<figure><img class="qa" src="https://placehold.co/160x100/3f51b5/ffffff?text=02-ABS"><figcaption>② 絶対URL（https）別ドメイン</figcaption></figure>
+<figure><img class="qa" src="/assets/root.svg"><figcaption>③ ルート相対 /assets/root.svg</figcaption></figure>
+<figure><img class="qa" src="img/same.svg"><figcaption>④ 相対（同階層）img/same.svg</figcaption></figure>
+<figure><img class="qa" src="./img/dot.svg"><figcaption>⑤ 相対（./）./img/dot.svg</figcaption></figure>
+<figure><img class="qa" src="../img/up1.svg"><figcaption>⑥ 相対（../）../img/up1.svg</figcaption></figure>
+<figure><img class="qa" src="../../img/up2.svg"><figcaption>⑦ 相対（../../）../../img/up2.svg</figcaption></figure>
+<figure><img class="qa" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4="><figcaption>⑧ data: URI（除外されるべき）</figcaption></figure>
+<figure><img class="qa" src="javascript:void(0)"><figcaption>⑨ javascript:（除外されるべき）</figcaption></figure>
+<figure><img class="qa" src=""><figcaption>⑩ 空src（除外されるべき）</figcaption></figure>
+<figure><img class="qa" src="img/same.svg"><figcaption>⑪ 重複（④と同一URL → array_uniqueで1件に集約されるべき）</figcaption></figure>
+<figure><img class="qa" src="../../../../../x.svg"><figcaption>⑫ 階層超え（rootを超える ../ → 先頭で止まる）</figcaption></figure>
+<figure><img class="qa" src="写真/サンプル.svg"><figcaption>⑬ マルチバイトパス 写真/サンプル.svg</figcaption></figure>
+</div>
+</body>
+</html>
