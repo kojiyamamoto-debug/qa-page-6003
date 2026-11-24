@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>KASIKA-6267 価格表示テスト</title>
+<style>
+body{font-family:sans-serif;max-width:960px;margin:24px auto;padding:0 16px;color:#222}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccc;padding:6px 8px;text-align:left;vertical-align:top}
+th{background:#eef2f8}dl{display:grid;grid-template-columns:8em 1fr;gap:8px}dt{font-weight:bold}
+img{max-width:320px}.note{color:#666;font-size:13px}
+</style>
+</head>
+<body>
+<h1>KASIKA-6267 価格表示テスト（自社物件）</h1>
+<p class="note">各ページの価格の文字列が、そのまま自社物件の価格として取り込まれる。期待結果は物件カードでの表示。</p>
+<table>
+<tr><th>ID</th><th>ページ</th><th>ページの価格</th><th>修正前の表示</th><th>期待結果（修正後）</th><th>観点</th></tr>
+<tr><td>O1</td><td><a href="bukken/O1.html">bukken/O1.html</a></td><td>1.05億円</td><td>1.5億円</td><td>1.05億円</td><td>不具合1：小数の先頭の0</td></tr>
+<tr><td>O2</td><td><a href="bukken/O2.html">bukken/O2.html</a></td><td>1.005億円</td><td>1.5億円</td><td>1.005億円</td><td>不具合1</td></tr>
+<tr><td>O3</td><td><a href="bukken/O3.html">bukken/O3.html</a></td><td>3980.05万円</td><td>3,980.5万円</td><td>3,980.05万円</td><td>不具合1</td></tr>
+<tr><td>O4</td><td><a href="bukken/O4.html">bukken/O4.html</a></td><td>7022.4</td><td>7,022.4</td><td>7,022.4万円</td><td>不具合2：単位なしの小数</td></tr>
+<tr><td>O5</td><td><a href="bukken/O5.html">bukken/O5.html</a></td><td>7022.40</td><td>7,022.40</td><td>7,022.4万円</td><td>不具合2＋末尾の0を消す</td></tr>
+<tr><td>O6</td><td><a href="bukken/O6.html">bukken/O6.html</a></td><td>7022.05</td><td>7,022.5</td><td>7,022.05万円</td><td>不具合1＋2</td></tr>
+<tr><td>O7</td><td><a href="bukken/O7.html">bukken/O7.html</a></td><td>7680.00</td><td>7,680.0</td><td>7,680万円</td><td>末尾の0と小数点を消す</td></tr>
+<tr><td>O8</td><td><a href="bukken/O8.html">bukken/O8.html</a></td><td>12300.00</td><td>12,300.0</td><td>12,300万円</td><td>同上（1億円以上も万円単位）</td></tr>
+<tr><td>O9</td><td><a href="bukken/O9.html">bukken/O9.html</a></td><td>価格，応相談</td><td>価格0応相談</td><td>価格，応相談</td><td>数字のない読点はそのまま</td></tr>
+<tr><td>O10</td><td><a href="bukken/O10.html">bukken/O10.html</a></td><td>7680</td><td>7,680万円</td><td>7,680万円</td><td>変わらない</td></tr>
+<tr><td>O11</td><td><a href="bukken/O11.html">bukken/O11.html</a></td><td>12300</td><td>12,300万円</td><td>12,300万円</td><td>変わらない</td></tr>
+<tr><td>O12</td><td><a href="bukken/O12.html">bukken/O12.html</a></td><td>1.0億円</td><td>1.0億円</td><td>1.0億円</td><td>変わらない</td></tr>
+<tr><td>O13</td><td><a href="bukken/O13.html">bukken/O13.html</a></td><td>1.5億円</td><td>1.5億円</td><td>1.5億円</td><td>変わらない</td></tr>
+<tr><td>O14</td><td><a href="bukken/O14.html">bukken/O14.html</a></td><td>1億500万円</td><td>1億500万円</td><td>1億500万円</td><td>変わらない</td></tr>
+<tr><td>O15</td><td><a href="bukken/O15.html">bukken/O15.html</a></td><td>4,280万円</td><td>4,280万円</td><td>4,280万円</td><td>変わらない</td></tr>
+<tr><td>O16</td><td><a href="bukken/O16.html">bukken/O16.html</a></td><td>2980万円～3480万円</td><td>2,980万円～3,480万円</td><td>2,980万円～3,480万円</td><td>変わらない</td></tr>
+<tr><td>O17</td><td><a href="bukken/O17.html">bukken/O17.html</a></td><td>7022.4万円</td><td>7,022.4万円</td><td>7,022.4万円</td><td>変わらない</td></tr>
+<tr><td>O18</td><td><a href="bukken/O18.html">bukken/O18.html</a></td><td>価格未定</td><td>価格未定</td><td>価格未定</td><td>変わらない</td></tr>
+<tr><td>O19</td><td><a href="bukken/O19.html">bukken/O19.html</a></td><td>１２３４万円</td><td>0万円</td><td>１２３４万円</td><td>全角数字は入力のまま</td></tr>
+<tr><td>O20</td><td><a href="bukken/O20.html">bukken/O20.html</a></td><td>１２３４</td><td>0万円</td><td>１２３４</td><td>全角数字は入力のまま（万円も付けない）</td></tr>
+<tr><td>O21</td><td><a href="bukken/O21.html">bukken/O21.html</a></td><td>1000，以上</td><td>1,000以上</td><td>1,000，以上</td><td>読点は消さない</td></tr>
+<tr><td>O22</td><td><a href="bukken/O22.html">bukken/O22.html</a></td><td>2980，3480万円</td><td>29,803,480万円</td><td>2980，3480万円</td><td>桁区切りでない読点は入力のまま</td></tr>
+<tr><td>O23</td><td><a href="bukken/O23.html">bukken/O23.html</a></td><td>2980,3480万円</td><td>29,803,480万円</td><td>2980,3480万円</td><td>桁区切りでない半角カンマは入力のまま</td></tr>
+<tr><td>O24</td><td><a href="bukken/O24.html">bukken/O24.html</a></td><td>1,0000万円</td><td>10,000万円</td><td>1,0000万円</td><td>4桁区切りは入力のまま</td></tr>
+<tr><td>O25</td><td><a href="bukken/O25.html">bukken/O25.html</a></td><td>1,0000</td><td>10,000万円</td><td>1,0000</td><td>単位なし・桁区切りでない → 万円も付けない</td></tr>
+<tr><td>O26</td><td><a href="bukken/O26.html">bukken/O26.html</a></td><td>1,2345万円</td><td>12,345万円</td><td>1,2345万円</td><td>4桁区切りは入力のまま</td></tr>
+<tr><td>O27</td><td><a href="bukken/O27.html">bukken/O27.html</a></td><td>2000万円</td><td>2,000万円</td><td>2,000万円</td><td>行動履歴・反響ではカンマが付くようになる</td></tr>
+<tr><td>O28</td><td><a href="bukken/O28.html">bukken/O28.html</a></td><td>1,680</td><td>1,680万円</td><td>1,680万円</td><td>行動履歴・反響では「万円」が付くようになる</td></tr>
+</table>
+</body>
+</html>
